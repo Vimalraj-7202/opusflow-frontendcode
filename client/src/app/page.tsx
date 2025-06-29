@@ -1,11 +1,5 @@
-import React from 'react'
-import{Typography,Box} from '@mui/material';
-import Sidebar from './components/pageComponents/Layout/Sidebar';
+import { redirect } from 'next/navigation'
+
 export default function Home() {
-  return (
-    <Box>
-    <Typography>OpusFlow</Typography>
-  <Sidebar/>
-    </Box>
-  );
+  redirect('/dashboard')
 }
