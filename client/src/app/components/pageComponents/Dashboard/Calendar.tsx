@@ -4,7 +4,7 @@ import React from 'react'
 const Calendar = () => {
   return (
     <div>
-      <Typography>Caldenar</Typography>
+      <Typography>Caldenarsssssssssss</Typography>
     </div>
   )
 }
