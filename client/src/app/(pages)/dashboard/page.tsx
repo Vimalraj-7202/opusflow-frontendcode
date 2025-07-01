@@ -20,7 +20,7 @@ const Index = () => {
         </Grid>
 
 
-        <Grid size={{xs:12,sm:12,md:7}}>
+        <Grid size={{xs:12,sm:12,md:6.8}}>
             <TeamMembers />
         </Grid>
         <Grid size={{xs:12,sm:12,md:5}}>
