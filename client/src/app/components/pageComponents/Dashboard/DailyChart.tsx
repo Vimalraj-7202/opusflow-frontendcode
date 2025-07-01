@@ -46,7 +46,7 @@ const DailyChart = () => {
         bgcolor: '#fff',
       }}
     >
-      <Typography variant="h6" fontWeight="bold" color="black" mb={1}>
+      <Typography  fontWeight="bold" color="black" mb={1}>
         My Progress
       </Typography>
       <Typography variant="body2" color="grey.600" mb={3}>
