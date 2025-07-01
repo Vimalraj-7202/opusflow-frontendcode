@@ -1,70 +1,89 @@
 'use client'
 import React from 'react'
-import { Paper, Typography, Box } from '@mui/material'
+import { Paper, Typography, Box, Stack, Chip } from '@mui/material'
 import { PieChart } from '@mui/x-charts/PieChart'
-import { useDrawingArea } from '@mui/x-charts/hooks'
-import { styled } from '@mui/material/styles'
-import { motion } from 'framer-motion'
 
-// ✅ PieChart data with color matching your background
 const data = [
-  { value: 5, label: 'Completed', color: 'teal' },   // white
-  { value: 15, label: 'In Progress', color: '#dcb6ff' }, // light lavender
-  { value: 20, label: 'Not started', color: '#ffb347' }, // peach
+  { value: 9, label: 'Completed', color: '#00897b' },
+  { value: 12, label: 'In Progress', color: '#ba68c8' },
+  { value: 16, label: 'Not Started', color: '#ffb74d' },
 ]
 
 const size = {
-  width: 250,
-  height: 250,
+  width: 240,
+  height: 220,
 }
 
-const StyledText = styled('text')(({ theme }) => ({
-  fill: '#ffffff', // center text white for best contrast
-  textAnchor: 'middle',
-  dominantBaseline: 'middle',
-  fontSize: 20,
-  fontWeight: 600,
-}))
-
-function PieCenterLabel({ children }: { children: React.ReactNode }) {
-  const { width, height, left, top } = useDrawingArea()
+// ✅ Pure SVG text for reliable center label
+function PieCenterLabelFixed({ children}:any) {
   return (
-    <StyledText x={left + width / 2} y={top + height / 2}>
+    <text
+      x={size.width / 2}
+      y={size.height / 2}
+      fontSize="22"
+      fontWeight="700"
+      fontFamily="sans-serif"
+      fill="#333"
+      dominantBaseline="middle"
+      textAnchor="middle"
+    >
       {children}
-    </StyledText>
+    </text>
   )
 }
 
 const DailyChart = () => {
+  const total = data.reduce((acc, curr) => acc + curr.value, 0)
+
   return (
     <Paper
       sx={{
         width: '100%',
-        height: '340px',
-        p: '16px',
-        borderRadius: 2,
-        boxShadow: 3
+        p: '12px',
+        height: '350px',
+        borderRadius: 4,
+        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+        bgcolor: '#fff',
       }}
     >
-      <Typography sx={{ fontWeight: 'bold', mb: 1, color: 'black' }}>
+      <Typography variant="h6" fontWeight="bold" color="black" mb={1}>
         My Progress
       </Typography>
-      <Typography sx={{ color: 'grey', mb: 2 }}>
-        Your task completion rate
+      <Typography variant="body2" color="grey.600" mb={3}>
+        Your task completion rate this week
       </Typography>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <PieChart
-            series={[
-              {
-                data,
-                innerRadius:70,
-                paddingAngle:3
-              },
-            ]}
-            {...size}
-          >
-          </PieChart>
+      <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <PieChart
+          series={[
+            {
+              data,
+              innerRadius: 90,
+              outerRadius: 110,
+              paddingAngle: 6,
+              cornerRadius: 5,
+            },
+          ]}
+          {...size}
+        >
+          <PieCenterLabelFixed>Total:{total}</PieCenterLabelFixed>
+        </PieChart>
+
+        <Stack direction="row" spacing={1} justifyContent="center" mt={1}>
+          {data.map((item) => (
+            <Chip
+              key={item.label}
+              label={`${item.label}: ${item.value}`}
+              sx={{
+                bgcolor: item.color,
+                color: '#fff',
+                fontWeight: 500,
+                px: 1.5,
+              }}
+              size="small"
+            />
+          ))}
+        </Stack>
       </Box>
     </Paper>
   )

@@ -12,8 +12,8 @@ const ProjectCard = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
-        columnGap: 3,
-        rowGap: 2,
+        columnGap:4,
+        rowGap:1,
       }}
     >
       {/* Total Projects */}
@@ -52,10 +52,10 @@ const ProjectCard = () => {
 }
 
 const cardStyles = {
-  p: 1,
+  p:'12px',
   borderRadius: '10px',
   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-  height: '165px',
+  height: '159px',
   width: '100%',
   position: 'relative',
   display: 'flex',

@@ -8,7 +8,7 @@ import Notes from '@/app/components/pageComponents/Dashboard/Notes'
 const Index = () => {
   return (
     <Box>
-      <Grid container spacing={5}>
+      <Grid container spacing={4}>
         <Grid size={{xs:12 ,sm:6 ,md:3}}>
           <Calendar />
         </Grid>
