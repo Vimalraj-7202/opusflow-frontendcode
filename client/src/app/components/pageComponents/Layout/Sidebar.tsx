@@ -85,7 +85,7 @@ const Sidebar = () => {
           <ListItemIcon 
             sx={{ 
               minWidth: 'auto', 
-              color: 'black',
+              color: 'white',
               filter: pathname === '/logout' ? 'drop-shadow(0 0 7px white)' : 'none'
             }}
           >
