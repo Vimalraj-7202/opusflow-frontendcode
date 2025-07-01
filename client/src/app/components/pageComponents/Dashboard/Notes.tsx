@@ -52,7 +52,8 @@ const Notes = () => {
               color: 'white', 
               textTransform: 'none', 
               height: '30px', 
-              backgroundColor: '#ad46ff' 
+              backgroundColor: '#ad46ff' ,
+              borderRadius:'6px'
             }}
             onClick={() => {
               setIsEditable(true)
@@ -66,7 +67,8 @@ const Notes = () => {
               color: 'white', 
               textTransform: 'none', 
               height: '30px', 
-              backgroundColor: 'orange' 
+              backgroundColor: 'orange',
+              borderRadius:'6px'
             }}
             onClick={() => setIsEditable(true)}
           >
