@@ -18,12 +18,11 @@ const Layout = ({ children }: any) => {
                 {/* Sidebar */}
                 <Box
                     sx={{
-                        width: '60px',
-                        background: 'linear-gradient(179.14deg, #0A43A0 -25.07%, #AD00AE 57.8%, #0A43A0 135.32%)',
-                        display: 'flex',
+                        width: '63px',
+                        backgroundColor: '#ad46ff', display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        borderRadius: '8px',
+                        borderRadius: '12px',
                         py: 2,
                         flexShrink: 0
                     }}
@@ -34,7 +33,7 @@ const Layout = ({ children }: any) => {
                 {/* Right Side */}
                 <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
                     {/* Topbar */}
-                    <Box sx={{ height: '60px'}}>
+                    <Box sx={{ height: '60px' }}>
                         <Topbar />
                     </Box>
 
@@ -45,10 +44,10 @@ const Layout = ({ children }: any) => {
                             p: 2,
                             bgcolor: 'white',
                             borderRadius: '8px',
-                            overflow: 'hidden', 
+                            overflow: 'auto',
                             '&::-webkit-scrollbar': { display: 'none' },
-                            scrollbarWidth: 'none', // for Firefox
-                            msOverflowStyle: 'none' // for IE/Edge
+                            // scrollbarWidth: 'none', // for Firefox
+                            // msOverflowStyle: 'none' // for IE/Edge
                         }}
                     >
                         {children}

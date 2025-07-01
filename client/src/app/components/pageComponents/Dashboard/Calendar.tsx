@@ -1,12 +1,78 @@
-import { Typography } from '@mui/material'
-import React from 'react'
+'use client'
+import * as React from 'react';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import { Button, Paper } from '@mui/material';
+import dayjs from 'dayjs';
 
-const Calendar = () => {
+export default function CustomMonthLayout() {
+  const [value, setValue] = React.useState<any>(dayjs());
+
   return (
-    <div>
-      <Typography>Caldenarsssssssssss</Typography>
-    </div>
-  )
-}
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Paper 
+        elevation={1}
+        sx={{ 
+          p:'12px', 
+          borderRadius: 3, 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          width: '100%',
+          height: '348px'
+        }}
+      >
+        <DateCalendar 
+          value={value}
+          onChange={(newValue) => setValue(newValue) as unknown}
+          showDaysOutsideCurrentMonth 
+          fixedWeekNumber={6}
+          slotProps={{
+            day: (ownerState) => ({
+              sx: {
+                width:36,
+                height: 36,
+                fontSize: '0.8rem',
+                lineHeight: '36px',
+                ...(ownerState.day.isSame(dayjs(), 'day') && {
+                  backgroundColor: 'orange',
+                  color: 'white',
+                  borderRadius: '50%',
+                }),
+              },
+            }),
+          }}
+          sx={{
+            '& .MuiPickersCalendarHeader-root': {
+              mb: 0.5
+            },
+            '& .MuiDayCalendar-weekContainer': {
+              mb: 0.4
+            },
+            '& .MuiDayCalendar-header': {
+              mb: 0.4
+            }
+          }}
+        />
 
-export default Calendar
+        <Button 
+          sx={{
+            color: 'white',
+            textTransform: 'none',
+            height: '40px',
+            width: '100%',
+            mt:'10px',
+            borderRadius: '10px',
+            backgroundColor: '#ad46ff',
+            fontSize: '16px'
+          }}
+          onClick={() => setValue(dayjs())}
+        >
+          Today
+        </Button>
+      </Paper>
+    </LocalizationProvider>
+  );
+}

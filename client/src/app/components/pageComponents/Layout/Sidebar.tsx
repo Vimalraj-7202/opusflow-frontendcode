@@ -3,14 +3,14 @@ import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Box, List, ListItemButton, ListItemIcon } from '@mui/material'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-import WorkIcon from '@mui/icons-material/Work'
+import WorkIcon from '@mui/icons-material/WorkHistory';
 import GroupIcon from '@mui/icons-material/Group'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import SettingsIcon from '@mui/icons-material/Settings'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import LogoutIcon from '@mui/icons-material/LogoutOutlined'
 
-const iconSize = 28
+const iconSize=35;
 
 const Sidebar = () => {
   const router = useRouter()
@@ -50,9 +50,6 @@ const Sidebar = () => {
               mb: 1,
               '&:hover': {
                 bgcolor: 'transparent'
-              },
-              '&:hover .MuiListItemIcon-root': {
-                filter: 'drop-shadow(0 0 6px white)'
               }
             }}
           >
@@ -60,7 +57,7 @@ const Sidebar = () => {
               sx={{ 
                 minWidth: 'auto', 
                 color: 'white',
-                filter: pathname === item.path ? 'drop-shadow(0 0 6px white)' : 'none'
+                filter: pathname === item.path ? 'drop-shadow(0 0 6px black)' : 'none',
               }}
             >
               {item.icon}
@@ -88,8 +85,8 @@ const Sidebar = () => {
           <ListItemIcon 
             sx={{ 
               minWidth: 'auto', 
-              color: 'white',
-              filter: pathname === '/logout' ? 'drop-shadow(0 0 6px white)' : 'none'
+              color: 'black',
+              filter: pathname === '/logout' ? 'drop-shadow(0 0 7px white)' : 'none'
             }}
           >
             <LogoutIcon sx={{ fontSize: iconSize }} />
