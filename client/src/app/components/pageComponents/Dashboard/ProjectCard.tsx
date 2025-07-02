@@ -12,13 +12,13 @@ const ProjectCard = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
-        columnGap:4,
-        rowGap:1,
+        columnGap: 4,
+        rowGap: 1,
       }}
     >
       {/* Total Projects */}
       <Paper sx={cardStyles}>
-        <StatusIcon color="#2563eb" bg="#dbeafe">
+        <StatusIcon color="white" bg="orange">
           <WorkOutlineOutlinedIcon sx={{ fontSize: 28 }} />
         </StatusIcon>
         <CardContent title="Total Projects" value="12" trend="+2" trendColor="green" />
@@ -26,7 +26,7 @@ const ProjectCard = () => {
 
       {/* In Progress */}
       <Paper sx={cardStyles}>
-        <StatusIcon color="#2563eb" bg="#dbeafe">
+        <StatusIcon color="white" bg="#ad46ff">
           <WorkHistoryOutlinedIcon sx={{ fontSize: 28 }} />
         </StatusIcon>
         <CardContent title="In Progress" value="5" trend="+3" trendColor="green" />
@@ -34,7 +34,7 @@ const ProjectCard = () => {
 
       {/* Completed */}
       <Paper sx={cardStyles}>
-        <StatusIcon color="#2563eb" bg="#dbeafe">
+        <StatusIcon color="green" bg="lightgreen">
           <TaskAltIcon sx={{ fontSize: 28 }} />
         </StatusIcon>
         <CardContent title="Completed" value="6" trend="+2" trendColor="green" />
@@ -52,8 +52,8 @@ const ProjectCard = () => {
 }
 
 const cardStyles = {
-  p:'12px',
-  borderRadius: '10px',
+  p: '12px',
+  borderRadius: '20px',
   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
   height: '159px',
   width: '100%',
@@ -63,7 +63,7 @@ const cardStyles = {
   justifyContent: 'space-between'
 }
 
-const StatusIcon = ({ children, color, bg }:any) => (
+const StatusIcon = ({ children, color, bg }: any) => (
   <Box sx={{
     backgroundColor: bg,
     borderRadius: '50%',
@@ -78,7 +78,7 @@ const StatusIcon = ({ children, color, bg }:any) => (
   </Box>
 )
 
-const CardContent = ({ title, value, trend, trendColor, rotate }:any) => (
+const CardContent = ({ title, value, trend, trendColor, rotate }: any) => (
   <>
     <Box sx={{ position: 'absolute', top: 8, right: 8, display: 'flex', alignItems: 'center' }}>
       <NorthEastIcon sx={{

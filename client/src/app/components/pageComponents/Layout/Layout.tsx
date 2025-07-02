@@ -19,7 +19,7 @@ const Layout = ({ children }: any) => {
                 <Box
                     sx={{
                         width: '63px',
-background:' linear-gradient(190deg, #ad46ff 0%, #ff69b4 50%, teal 100%)',
+                        background:' linear-gradient(190deg, #ad46ff 0%, #ff69b4 50%, teal 100%)',
                          display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',

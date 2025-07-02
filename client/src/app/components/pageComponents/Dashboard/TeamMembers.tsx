@@ -2,17 +2,17 @@ import React from 'react'
 import { Paper, Typography, Box, Divider, Avatar, Button, Chip } from '@mui/material'
 
 const data = [
-  { name: 'John Doe', email: 'john@example.com', tasks: { notStarted: 12, completed: 3, total: 15 }, role: 'Developer', performance: '+12% this week', avatar: 'https://i.pravatar.cc/150?img=1' },
-  { name: 'Emily Davis', email: 'emily@example.com', tasks: { notStarted: 5, completed: 15, total: 20 }, role: 'Manager', performance: '5% this week', avatar: 'https://i.pravatar.cc/150?img=2' },
-  { name: 'Jane Smith', email: 'jane@example.com', tasks: { notStarted: 2, completed: 13, total: 15 }, role: 'Designer', performance: '25% this week', avatar: 'https://i.pravatar.cc/150?img=3' },
-  { name: 'Mike Johnson', email: 'mike@example.com', tasks: { notStarted: 6, completed: 2, total: 8 }, role: 'QA', performance: '-5% this week', avatar: 'https://i.pravatar.cc/150?img=4' },
-  { name: 'John Abrahm', email: 'johnabrahm@example.com', tasks: { notStarted: 6, completed: 2, total: 8 }, role: 'QA', performance: '20% this week', avatar: 'https://i.pravatar.cc/150?img=4' },
-  { name: 'Jane Smith', email: 'jane@example.com', tasks: { notStarted: 2, completed: 13, total: 15 }, role: 'Designer', performance: '15% this week', avatar: 'https://i.pravatar.cc/150?img=3' },
+  { name: 'John Doe', email: 'john@gmail.com', tasks: { notStarted: 12, completed: 3, total: 15 }, role: 'Developer', performance: '+12% this week', avatar: 'https://i.pravatar.cc/150?img=1' },
+  { name: 'Emily Davis', email: 'emily@gmail.com', tasks: { notStarted: 5, completed: 15, total: 20 }, role: 'Manager', performance: '5% this week', avatar: 'https://i.pravatar.cc/150?img=2' },
+  { name: 'Jane Smith', email: 'jane@gmail.com', tasks: { notStarted: 2, completed: 13, total: 15 }, role: 'Designer', performance: '25% this week', avatar: 'https://i.pravatar.cc/150?img=3' },
+  { name: 'Mike Johnson', email: 'mike@gmail.com', tasks: { notStarted: 6, completed: 2, total: 8 }, role: 'QA', performance: '-5% this week', avatar: 'https://i.pravatar.cc/150?img=4' },
+  { name: 'John Abrahm', email: 'johnabrahm@gmail.com', tasks: { notStarted: 6, completed: 2, total: 8 }, role: 'QA', performance: '20% this week', avatar: 'https://i.pravatar.cc/150?img=5' },
+  { name: 'Jane Smith', email: 'jane@gmail.com', tasks: { notStarted: 2, completed: 13, total: 15 }, role: 'Designer', performance: '15% this week', avatar: 'https://i.pravatar.cc/150?img=6' },
 ]
 
 const TeamMembers = () => {
   return (
-    <Paper sx={{ width: '100%', p:1.5, borderRadius: '12px', height: '400px', display: 'flex', flexDirection: 'column' }}>
+    <Paper sx={{ width: '100%', p: 1.5, borderRadius: '12px', height: '400px', display: 'flex', flexDirection: 'column' }}>
       <Typography sx={{ fontWeight: 'bold' }}>Team Members</Typography>
       <Typography sx={{ color: 'grey', mb: 2 }}>Performance overview of team members</Typography>
 
@@ -28,7 +28,7 @@ const TeamMembers = () => {
       <Divider />
 
       {/* Data Rows */}
-      <Box sx={{ flex: 1, overflowY: 'auto', mt: 1 }}>
+      <Box sx={{ flex: 1, overflowY: 'auto', mt: 1, '&::-webkit-scrollbar': { display: 'none' } }}>
         {data.map((member, idx) => (
           <Box
             key={idx}

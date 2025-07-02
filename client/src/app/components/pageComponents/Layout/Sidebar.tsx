@@ -9,7 +9,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import SettingsIcon from '@mui/icons-material/Settings'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import LogoutIcon from '@mui/icons-material/LogoutOutlined'
-
+// import LightModeIcon from '@mui/icons-material/LightMode';
+// import NightsStayIcon from '@mui/icons-material/NightsStay';
 const iconSize=35;
 
 const Sidebar = () => {
@@ -18,11 +19,12 @@ const Sidebar = () => {
 
   const navItems = [
     { icon: <DashboardIcon sx={{ fontSize: iconSize }} />, path: '/dashboard' },
-    { icon: <WorkIcon sx={{ fontSize: iconSize }} />, path: '/my_works' },
+    { icon: <WorkIcon sx={{ fontSize: iconSize }} />, path: '/mytasks' },
     { icon: <GroupIcon sx={{ fontSize: iconSize }} />, path: '/team' },
     { icon: <NotificationsIcon sx={{ fontSize: iconSize }} />, path: '/notifications' },
     { icon: <SettingsIcon sx={{ fontSize: iconSize }} />, path: '/settings' },
     { icon: <AdminPanelSettingsIcon sx={{ fontSize: iconSize }} />, path: '/admin' }
+
   ]
 
   return (
@@ -32,7 +34,7 @@ const Sidebar = () => {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between', // pushes logout to bottom
+        justifyContent: 'space-between',
         alignItems: 'center',
         py: 2
       }}
