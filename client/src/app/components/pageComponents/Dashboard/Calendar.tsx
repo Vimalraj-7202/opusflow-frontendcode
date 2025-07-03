@@ -7,7 +7,7 @@ import { Button, Paper } from '@mui/material';
 import dayjs from 'dayjs';
 
 export default function CustomMonthLayout() {
-  const [value, setValue] = React.useState<any>(dayjs());
+  const [value, setValue] = React.useState<any | null>(dayjs());
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -37,7 +37,7 @@ export default function CustomMonthLayout() {
                 fontSize: '0.8rem',
                 lineHeight: '36px',
                 borderRadius: '50%',
-                ...(ownerState.day.isSame(dayjs(), 'day') && {
+                ...(dayjs(ownerState.day).isSame(dayjs(), 'day') && {
                   backgroundColor: 'lightgreen',
                   color: 'black',
                   '&:hover': {
@@ -48,6 +48,7 @@ export default function CustomMonthLayout() {
               },
             }),
           }}
+
           sx={{
             '& .MuiPickersCalendarHeader-root': { mb: 0.5 },
             '& .MuiDayCalendar-weekContainer': { mb: 0.4 },

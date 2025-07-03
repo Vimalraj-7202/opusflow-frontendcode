@@ -1,6 +1,6 @@
 import React from 'react'
 import Calendar from '@/app/components/pageComponents/Dashboard/Calendar'
-import DailyChart from '@/app/components/pageComponents/Dashboard/DailyChart'
+import PieChart from '@/app/components/pageComponents/Dashboard/DailyChart'
 import Card from '@/app/components/pageComponents/Dashboard/ProjectCard'
 import { Box, Grid } from '@mui/material'
 import TeamMembers from '@/app/components/pageComponents/Dashboard/TeamMembers'
@@ -16,7 +16,7 @@ const Index = () => {
           <Card />
         </Grid>
         <Grid size={{xs:12, sm:12, md:4.5}}>
-          <DailyChart />
+          <PieChart />
         </Grid>
 
 

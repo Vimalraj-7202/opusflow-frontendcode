@@ -4,7 +4,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import { Box, Tabs, Tab, Typography } from '@mui/material'
 import Task from '@/app/components/pageComponents/My_works/Task_Management'
 import My_Task from '@/app/components/pageComponents/My_works/My_Task'
-import ActivityLog from '@/app/components/pageComponents/My_works/ActivityLog'
+import AuditLog from '@/app/components/pageComponents/My_works/AuditLog'
 import PersonalNotes from '@/app/components/pageComponents/My_works/PersonalNotes'
 import Documents from '@/app/components/pageComponents/My_works/Documents'
 
@@ -28,7 +28,7 @@ const TaskManagementPage = () => {
   const tabs = [
     { key: 'Taskmanagement', label: 'Task Management' },
     { key: 'My_Task', label: 'My Task' },
-    { key: 'Activity_Log', label: 'Activity Log' },
+    { key: 'Audit_Log', label: 'Audit Log' },
     { key: 'Personal_Notes', label: 'Personal Notes' },
     { key: 'Doucuments', label: 'Documents' },
   ];
@@ -82,7 +82,7 @@ const TaskManagementPage = () => {
           <My_Task/>
         </TabPanel>
         <TabPanel value={safeIndex} index={2}>
-          <ActivityLog/>
+          <AuditLog/>
         </TabPanel>
         <TabPanel value={safeIndex} index={3}>
           <PersonalNotes/>
